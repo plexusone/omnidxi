@@ -6,29 +6,40 @@
 
 Initial release of omnidxi, the batteries-included DXI (Digital Experience Intelligence) client for Go.
 
-This package provides a high-level client that re-exports all core types from omnidxi-core and adds the MultiTracker for sending events to multiple analytics providers simultaneously.
+This package provides a high-level client that re-exports all core types from omnidxi-core, bundles Amplitude and Mixpanel adapters, and adds the MultiTracker for sending events to multiple analytics providers simultaneously.
 
 ## Highlights
 
 - Batteries-included DXI client for Go
 - MultiTracker for sending events to multiple providers simultaneously
+- Bundled Amplitude and Mixpanel provider adapters
 
 ## What's Included
+
+### Bundled Providers
+
+Convenience constructors for creating provider trackers:
+
+```go
+import "github.com/plexusone/omnidxi"
+
+// Create Amplitude tracker
+amp := omnidxi.NewAmplitudeTracker(omnidxi.WithAPIKey("amp-key"))
+
+// Create Mixpanel tracker
+mp := omnidxi.NewMixpanelTracker(omnidxi.WithAPIKey("mp-token"))
+```
 
 ### MultiTracker
 
 Send events to multiple DXI providers with a single call:
 
 ```go
-import (
-    "github.com/plexusone/omnidxi"
-    amplitude "github.com/plexusone/omni-amplitude/omnidxi"
-    mixpanel "github.com/plexusone/omni-mixpanel/omnidxi"
-)
+import "github.com/plexusone/omnidxi"
 
 // Create provider trackers
-amp, _ := amplitude.New(amplitude.WithAPIKey("amp-key"))
-mp, _ := mixpanel.New(mixpanel.WithToken("mp-token"))
+amp := omnidxi.NewAmplitudeTracker(omnidxi.WithAPIKey("amp-key"))
+mp := omnidxi.NewMixpanelTracker(omnidxi.WithAPIKey("mp-token"))
 
 // Combine into MultiTracker
 tracker := omnidxi.NewMultiTracker(amp, mp)
@@ -73,6 +84,8 @@ All core types from omnidxi-core are re-exported for convenience:
 ## Dependencies
 
 - `github.com/plexusone/omnidxi-core` v0.1.0
+- `github.com/plexusone/omni-amplitude` v0.1.0
+- `github.com/plexusone/omni-mixpanel` v0.1.0
 
 ## Installation
 
@@ -83,5 +96,5 @@ go get github.com/plexusone/omnidxi@v0.1.0
 ## Related Packages
 
 - [omnidxi-core](https://github.com/plexusone/omnidxi-core) - Core interfaces and types
-- [omni-amplitude](https://github.com/plexusone/omni-amplitude) - Amplitude adapter
-- [omni-mixpanel](https://github.com/plexusone/omni-mixpanel) - Mixpanel adapter
+- [omni-amplitude](https://github.com/plexusone/omni-amplitude) - Amplitude adapter (standalone)
+- [omni-mixpanel](https://github.com/plexusone/omni-mixpanel) - Mixpanel adapter (standalone)

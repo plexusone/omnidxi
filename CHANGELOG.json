@@ -9,23 +9,28 @@
     {
       "version": "v0.1.0",
       "date": "2026-04-27",
-      "commit": "33d9dfa",
+      "commit": "3addf43",
       "highlights": [
         { "description": "Initial release of omnidxi - batteries-included DXI client for Go" },
-        { "description": "MultiTracker for sending events to multiple providers simultaneously" }
+        { "description": "MultiTracker for sending events to multiple providers simultaneously" },
+        { "description": "Bundled Amplitude and Mixpanel provider adapters" }
       ],
       "added": [
         { "description": "Re-exports of all core types from omnidxi-core", "commit": "f254df6" },
         { "description": "MultiTracker for multi-provider event dispatch with aggregated error handling", "commit": "f254df6" },
         { "description": "Thread-safe Add method for runtime provider addition", "commit": "f254df6" },
-        { "description": "NoopTracker for testing and disabled scenarios", "commit": "2ca8fdf" }
+        { "description": "NoopTracker for testing and disabled scenarios", "commit": "2ca8fdf" },
+        { "description": "NewAmplitudeTracker constructor re-export", "commit": "3addf43" },
+        { "description": "NewMixpanelTracker constructor re-export", "commit": "3addf43" }
       ],
       "documentation": [
         { "description": "README with quick start, architecture diagram, and provider reference", "commit": "c551141" }
       ],
       "dependencies": [
         { "description": "Go 1.22+", "commit": "33d9dfa" },
-        { "description": "github.com/plexusone/omnidxi-core v0.1.0", "commit": "33d9dfa" }
+        { "description": "github.com/plexusone/omnidxi-core v0.1.0", "commit": "33d9dfa" },
+        { "description": "github.com/plexusone/omni-amplitude v0.1.0", "commit": "3addf43" },
+        { "description": "github.com/plexusone/omni-mixpanel v0.1.0", "commit": "3addf43" }
       ]
     }
   ]
