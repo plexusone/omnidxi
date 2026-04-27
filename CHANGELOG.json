@@ -1,0 +1,32 @@
+{
+  "irVersion": "1.0",
+  "project": "omnidxi",
+  "repository": "https://github.com/plexusone/omnidxi",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "maintainers": ["plexusone", "johncwang@gmail.com"],
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-04-27",
+      "commit": "33d9dfa",
+      "highlights": [
+        { "description": "Initial release of omnidxi - batteries-included DXI client for Go" },
+        { "description": "MultiTracker for sending events to multiple providers simultaneously" }
+      ],
+      "added": [
+        { "description": "Re-exports of all core types from omnidxi-core", "commit": "f254df6" },
+        { "description": "MultiTracker for multi-provider event dispatch with aggregated error handling", "commit": "f254df6" },
+        { "description": "Thread-safe Add method for runtime provider addition", "commit": "f254df6" },
+        { "description": "NoopTracker for testing and disabled scenarios", "commit": "2ca8fdf" }
+      ],
+      "documentation": [
+        { "description": "README with quick start, architecture diagram, and provider reference", "commit": "c551141" }
+      ],
+      "dependencies": [
+        { "description": "Go 1.22+", "commit": "33d9dfa" },
+        { "description": "github.com/plexusone/omnidxi-core v0.1.0", "commit": "33d9dfa" }
+      ]
+    }
+  ]
+}
