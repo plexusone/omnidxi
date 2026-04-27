@@ -15,6 +15,8 @@ import (
 	"sync"
 
 	core "github.com/plexusone/omnidxi-core"
+	amplitude "github.com/plexusone/omni-amplitude/omnidxi"
+	mixpanel "github.com/plexusone/omni-mixpanel/omnidxi"
 )
 
 // Re-export core types for convenience.
@@ -69,6 +71,15 @@ var (
 	ErrInvalidEventName = core.ErrInvalidEventName
 	ErrFlushFailed      = core.ErrFlushFailed
 	ErrClosed           = core.ErrClosed
+)
+
+// Provider constructors for convenience.
+var (
+	// NewAmplitudeTracker creates an Amplitude tracker.
+	NewAmplitudeTracker = amplitude.New
+
+	// NewMixpanelTracker creates a Mixpanel tracker.
+	NewMixpanelTracker = mixpanel.New
 )
 
 // MultiTracker sends events to multiple providers simultaneously.
