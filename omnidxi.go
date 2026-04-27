@@ -14,9 +14,9 @@ import (
 	"context"
 	"sync"
 
-	core "github.com/plexusone/omnidxi-core"
 	amplitude "github.com/plexusone/omni-amplitude/omnidxi"
 	mixpanel "github.com/plexusone/omni-mixpanel/omnidxi"
+	core "github.com/plexusone/omnidxi-core"
 )
 
 // Re-export core types for convenience.
